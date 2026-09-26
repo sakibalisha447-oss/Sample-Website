@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Currency, Product, CartItem } from './types';
 import { PRODUCTS } from './data/mockData';
 import { TopBar } from './components/TopBar';
@@ -23,6 +23,11 @@ import { MemberCreditsModal } from './components/MemberCreditsModal';
 import { LiveChatWidget } from './components/LiveChatWidget';
 
 export default function App() {
+  // Enforce tab title is Sample Website
+  useEffect(() => {
+    document.title = 'Sample Website';
+  }, []);
+
   // Brand name configurable - updated to YOUR COMPANY
   const [brandName, setBrandName] = useState<string>('YOUR COMPANY');
 
